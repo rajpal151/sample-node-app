@@ -1,10 +1,21 @@
-function changeText(){
-    var textArray = ["Text1", "Text2" , "Text3", "Text4", "Text5"]
-    var number = getRandomNumberBetween(0, textArray.length - 1)
-    console.log("Index: ", number)
-    document.getElementById("heading").innerHTML = textArray[number];
-}
+let express = require('express');
+let app = express();
+let port = process.env.port || 3000;
 
-function getRandomNumberBetween(min, max){
-    return Math.floor(Math.random() * (max-min+1)+min);
-}
+app.use(express.static(__dirname + '/'));
+
+app.get('/', function (req,res) {
+    res.render('index.html');
+});
+
+app.get('/addTwoNumbers', function (req,res) {
+    let num1 = req.query.num1;
+    let num2 = req.query.num2;
+    let result = parseInt(num1) + parseInt(num2);
+    let response = {data:result, message:'sucess', statusCode:200}
+    res.json(response);
+});
+
+app.listen(port, ()=>{
+    console.log('express server started');
+});
