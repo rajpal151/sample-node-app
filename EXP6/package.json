@@ -1,0 +1,20 @@
+{
+  "name": "sit725-2023-t1-prac6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.8",
+    "express": "^4.18.2",
+    "moch": "^0.0.1",
+    "mocha": "^10.2.0",
+    "mongodb": "^4.4.1",
+    "request": "^2.88.2"
+  },
+  "description": ""
+}
