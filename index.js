@@ -19,17 +19,7 @@ const logger = winston.createLogger({
 
 app.use(express.json());
 
-// Addition
-app.post('/add', (req, res) => {
-  const { num1, num2 } = req.body;
-  if (!num1 || !num2 || isNaN(num1) || isNaN(num2)) {
-    logger.error('Invalid input');
-    return res.status(400).json({ error: 'Invalid input' });
-  }
-  logger.info(`Addition operation requested: ${num1} + ${num2}`);
-  const result = parseFloat(num1) + parseFloat(num2);
-  res.json({ result });
-});
+
 
 // Subtraction
 app.post('/subtract', (req, res) => {
